@@ -31,8 +31,8 @@ Aahel will lead the design for the project and Aditi will lead the code. We will
 
 **Code Resources**
 - **Canvas**
-- http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/#demo-simple
-- http://perfectionkills.com/exploring-canvas-drawing-techniques/
+  - http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/#demo-simple
+  - http://perfectionkills.com/exploring-canvas-drawing-techniques/
 
 - **Javascript**
 - **Jquery**
