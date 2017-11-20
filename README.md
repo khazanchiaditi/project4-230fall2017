@@ -15,7 +15,7 @@ This interactive experience aims to educate people about other cultures. And to 
 
 
 ## Sketches
-
+![Sketches](https://github.com/khazanchiaditi/project4-230fall2017/blob/master/sketch.jpg)
 
 ## Roles & Responsibilities
 Aahel will lead the design for the project and Aditi will lead the code. We will collaborate on both ends where Aditi will be helping with design research and implementation, while Aahel would be coding a portion of the web app.
