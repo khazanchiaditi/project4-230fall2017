@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Project 4</title>
+        <meta name="description" content="">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="fullpage">
+            <div class="section fp-auto-height-responsive title">
+                <div class="container-width">
+                    <div id="heading"><h1>Name of the Experience</h1></div><br>
+                    <div id="intro"><p>This interactive experience aims to educate people about other cultures. And to also make them realise how we are fundamentally similar even with our differences.</p></div>
+                </div>
+                <div id="scroll-begin">
+                    <small>Scroll to begin</small>
+                    <div id="scroll-line"></div>
+                </div>
+            </div>
+
+            <div class="brief section info">
+                <div class="container-width">
+                    <h2>Tell us about yourself</h2><br>
+                    <p>Brief description of this section</p>
+                </div>
+            </div>
+            <div class="question section info">
+                <div class="container-width">
+                    <div class="messages"></div>
+                    <h3>What is your Name?</h3><br>
+                    <form method="post" action="info.php" role="form">
+                        <input id="user_name" type="text" name="name" placeholder="Your name" required="required" data-error="Firstname is required">
+                        <div class="help-block with-errors"></div>
+                        <input type="submit" class="button" value="Next">
+                    </form>
+                </div>
+            </div>
+            <div class="question section info">
+                <div class="container-width">
+                    <div class="messages"></div>
+                    <h3>Where are you from?</h3><br>
+                    <form method="post" action="info.php" role="form">
+                        <input id="user_name" type="text" name="name" placeholder="Country" required="required" data-error="Country is required">
+                        <div class="help-block with-errors"></div>
+                        <input type="submit" class="button" value="Next">
+                    </form>
+                </div>
+            </div>
+            <div class="question section info">
+                <div class="container-width">
+                    <div class="messages"></div>
+                    <h3>third question?</h3><br>
+                    <form method="post" action="info.php" role="form">
+                        <input id="user_name" type="text" name="name" placeholder="answer" required="required" data-error="answer is required">
+                        <div class="help-block with-errors"></div>
+                        <input type="submit" class="button" value="Next">
+                    </form>
+                </div>
+            </div>
+
+            <div class="brief section trivia">
+                <div class="container-width">
+                    <h2>Weekly Trivia</h2><br>
+                    <p>Brief description of this section</p>
+                </div>
+            </div>
+            <div class="options section trivia">
+                    <div id="left-container"></div>
+                    <div id="right-container">
+                        <div class="container-width">
+                            <ul id="topics">
+                                <li><a href="">Celebration</a></li>
+                                <li><a href="">Culture</a></li>
+                                <li><a href="">Society</a></li>
+                                <li><a href="">Pets</a></li>
+                            </ul>
+                            <section class="cards trivia">
+                                <div id="celebration"></div>
+                                <div id="culture"></div>
+                                <div id="society"></div>
+                                <div id="pets"></div>
+                            </section>
+                        </div>
+                        <svg width="100%" height="100%">
+                            <rect width="100%" height="100%" style="fill:rgb(255,255,255);"/>
+                        </svg>
+                    </div>
+            </div>
+
+            <div class="brief section pictionary">
+                <div class="container-width">  
+                    <h2>Pictionary</h2><br>
+                    <p>Brief description of this section</p>
+                </div>
+            </div>
+            <div class="draw section pictionary">
+                <div class="container-width">
+                </div>
+            </div>
+            <div class="confirm section pictionary">
+                <div class="container-width">
+                </div>
+            </div>
+
+            <div class="section result">
+                <div class="container-width">
+                    <h2>Image database</h2><br>
+                    <p>Brief description of this section</p>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+        <script type="text/javascript" src="js/code.js"></script>
+    </body>
+</html>
+
