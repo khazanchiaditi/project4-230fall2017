@@ -5,8 +5,8 @@ $(document).ready(function() {
                     
         css3: true,
         'easing': 'ease',
-        scrollingSpeed: 650, 
-        anchors:['title', 'info1', 'info2', 'info3','info4', 'trivia1', 'trivia2', 'pictionary1', 'pictionary2', 'pictionary3', 'result '],
+        scrollingSpeed: 700, 
+        anchors:['title', 'info1', 'info2', 'info3','info4', 'trivia1', 'trivia2', 'pictionary1', 'pictionary2', 'pictionary3', 'result'],
         navigation: true,
         
         afterLoad: function(anchorLink, index){
@@ -17,37 +17,83 @@ $(document).ready(function() {
             } else {
                 $('#fp-nav').show(200);
             }
+            
+            //fire animations info
+            if(anchorLink == 'info1'){
+                infoAnimate();
+            }
+            //fire animations trivia
+            if(anchorLink == 'trivia1'){
+                triviaAnimate();
+            }
+            //fire animations pictionary
+            if(anchorLink == 'pictionary1'){
+                pictionaryAnimate();
+            }
+            //fire animations result
+            if(anchorLink == 'result'){
+                resultAnimate();
+            }
         },
     });
 });
 
-//function to adjust the nav bar based on hash value
 
-var slider = $('#fp-nav');
-
-var findHash = (function() {
-    
-    var hash = window.location.hash;
-    
-    if(hash === "#title" || hash === '') {
-        slider.addClass('invisible',300);
-    } else {
-        slider.removeClass('invisible',300); 
-    }
-});
-
-setInterval(findHash,100);
-
-//title animation
+//title animation for each section
 
 var title = $('.title h1');
 var description = $('.title p');
 
+var infoTitle = $('.info h2');
+var infoDescription = $('.info p');
+
+var triviaTitle = $('.trivia h2');
+var triviaDescription = $('.trivia p');
+
+var pictionaryTitle = $('.pictionary h2');
+var pictionaryDescription = $('.pictionary p');
+
+var resultTitle = $('.result h2');
+var resultDescription = $('.result p');
+
+//fire animations for landing section
 $(document).ready(function() {
     title.addClass('titleIntro');
     setTimeout(function() { 
         description.addClass('titleIntro'); 
-    }, 150);
+    }, 200);
+});
+
+//fire animations for info
+var infoAnimate = (function() {
+    infoTitle.addClass('titleIntro');
+    setTimeout(function() { 
+        infoDescription.addClass('titleIntro'); 
+    }, 100);
+});
+
+//fire animations for trivia
+var triviaAnimate = (function() {
+    triviaTitle.addClass('titleIntro');
+    setTimeout(function() { 
+        triviaDescription.addClass('titleIntro'); 
+    }, 100);
+});
+
+//fire animations for pictionary
+var pictionaryAnimate = (function() {
+    pictionaryTitle.addClass('titleIntro');
+    setTimeout(function() { 
+        pictionaryDescription.addClass('titleIntro'); 
+    }, 100);
+});
+
+//fire animations for result
+var resultAnimate = (function() {
+    resultTitle.addClass('titleIntro');
+    setTimeout(function() { 
+        resultDescription.addClass('titleIntro'); 
+    }, 100);
 });
 
 /*
