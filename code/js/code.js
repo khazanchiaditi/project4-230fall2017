@@ -1,3 +1,19 @@
+$(document).ready(function(){
+
+	$('#right-container ul li a').mouseenter(function() {
+		$("circle").attr("class", "half-move");
+	});
+
+	$('#right-container ul li a').mouseout(function() {
+		$("circle").attr("class", "");
+	});
+    
+    $('#right-container ul li a').click(function() {
+        $("circle").attr("class", "full-move");
+    });
+
+})
+
 //vertical dots in the form section
 
 $(document).ready(function() {
@@ -95,24 +111,3 @@ var resultAnimate = (function() {
         resultDescription.addClass('titleIntro'); 
     }, 100);
 });
-
-/*
-  $(document).ready(function(){
-        var rightBoxWidth = $("#right-container").width();
-        var leftBoxWidth = $("#left-container").width();
-		$("ul li a").mouseover(function(){
-			$(this).animate({
-				width: "65%"
-			}),
-            $("#left-container").animate({
-				width: "35%"
-			});
-		}).mouseout(function(){
-			$(this).animate({
-				width: rightBoxWidth
-			}),
-                $("#left-container").animate({
-				width: leftBoxWidth
-			});
-		});
-    });*/

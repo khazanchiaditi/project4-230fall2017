@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "compass/css3";
 
 * {
 	padding: 0;
@@ -215,18 +214,30 @@ input[type=text]:valid + .label-text{
     background-color: #6028ca!important;
 }
 
+.options-content{
+    width: 100%;
+	height: 100%;
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.trivia #left-container, .trivia #right-container{
+    width: 50%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .trivia #left-container{
     background-color: #6028ca!important;
-    width: 50%;
-    float: left;
-    HEIGHT: 100%;
 }
 
 .trivia #right-container{
     background-color: #fff!important;
-    width: 50%;
-    float: left;
-    HEIGHT: 100%;
 }
 
 .trivia h2{
@@ -240,34 +251,10 @@ input[type=text]:valid + .label-text{
     font-size: 2rem;
 }
 
-svg{
-    z-index: 1;
-    position: absolute;
-    top: 0px;
-}
-
-rect:hover{
-    animation: move 1s ease;
-}
-
-@keyframes move {
-    0% {
-         width: 100%;
-    }
-    100% {
-         width: 150%;
-    }
-}
-
-#right-container .container-width{
-    position: relative;
-    z-index: 999;
-}
-
 #right-container ul{
     list-style: none;
     padding-left: 0;
-    padding-top: 120px;
+    padding-top: calc(50% - 450px);
     height: 100%;
     margin: auto 0;
 }
@@ -287,10 +274,37 @@ rect:hover{
     color: #000;
     font-weight: 800;
     transition: all 0.2s ease;
+    position: relative;
+	z-index: 20;
+	cursor: pointer;
 }
 
 #right-container ul li a:hover{
     color: #28b08f;
+}
+
+svg {
+	overflow: hidden;
+	position: relative;
+}
+
+circle {
+	width: 100%;
+	height: 100%;
+	transition: all .5s ease-in-out;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	left: 0;
+    transform: translateX(100%);
+}
+
+circle.half-move {
+	transform: translateX(-20%) scale(1.2,1.2) translateY(-6%);
+}
+
+circle.full-move {
+	transform: translateX(-70%) scale(1.2,1.2) translateY(-6%);
 }
 /****************************************************/
 /* pictionary */
