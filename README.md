@@ -21,7 +21,18 @@ This interactive experience aims to educate people about other cultures. And to 
 ![Mockups](https://github.com/khazanchiaditi/project4-230fall2017/tree/master/design_screens)
 
 ## Roles & Responsibilities
-Aahel will lead the design for the project and Aditi will lead the code. We will collaborate on both ends where Aditi will be helping with design research and implementation, while Aahel would be coding a portion of the web app.
+Aahel will lead the design for the project and Aditi will lead the code. We will collaborate on both ends where Aditi will be helping with design research and implementation, while Aahel would be coding the documentation page.
+
+- **Aahel**
+  - Sketches
+  - Mockups (design and mood)
+  - Coding the documentation page
+  - Written Content
+  
+- **Aditi**
+  - Proposal/design document
+  - Writing the documentation page
+  - Coding the interactive experience
 
 ## List of Resources
 
