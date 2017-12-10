@@ -16,11 +16,14 @@
         <div id="fullpage">
             <div class="section fp-auto-height-responsive title">
                 <div class="container-width">
-                    <div id="heading"><h1>Name of the Experience</h1></div><br>
-                    <div id="intro"><p>This interactive experience aims to educate people about other cultures. And to also make them realise how we are fundamentally similar even with our differences.</p></div>
+                    <div id="heading"><h1>The World's Canvas</h1></div><br>
+                    <div id="intro"><p>An interactive experience that aims to educate people about other cultures and to also make them realise how despite our differences we are fundamnetally the same.</p></div>
                 </div>
+                <img src="images/circles.svg" width="100" height="100">
+                <img src="images/map.svg" width="100" height="100">
+                
                 <div id="scroll-begin">
-                    <small>Begin your journey</small>
+                    <small>Scroll to Begin your Journey</small>
                     <div id="scroll-line"></div>
                 </div>
             </div>
@@ -77,22 +80,40 @@
             <div class="options section trivia">
                 <div class="options-content">
                     <div id="left-container">
+                        <div class="svg-images">
+                            <img src="images/polygon.svg">
+                            <img src="images/triangle.svg">
+                            <img src="images/cap.svg">
+                            <img src="images/baloon.svg">
+                        </div>
                         <div class="card celebration">
                             <h4>Chinese New Year</h4><br>
                             <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
                             <img src="images/celebration.jpg" alt="Image showing celebration">
                         </div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
+                        <div class="card culture">
+                            <h4>Culture</h4><br>
+                            <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
+                            <img src="images/celebration.jpg" alt="Image showing culture">
+                        </div>
+                        <div class="card society">
+                            <h4>Society</h4><br>
+                            <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
+                            <img src="images/celebration.jpg" alt="Image showing society">
+                        </div>
+                        <div class="card pets">
+                            <h4>Pets</h4><br>
+                            <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
+                            <img src="images/celebration.jpg" alt="Image showing pets">
+                        </div>
                     </div>
                     <div id="right-container">
                         <div class="container-width">
                             <ul id="topics">
-                                <li><a>Celebration</a></li>
-                                <li><a>Culture</a></li>
-                                <li><a>Society</a></li>
-                                <li><a>Pets</a></li>
+                                <li><a class="celebration">Celebration</a></li>
+                                <li><a class="culture">Culture</a></li>
+                                <li><a class="society">Society</a></li>
+                                <li><a class="pets">Pets</a></li>
                             </ul> 
                         </div>
                     </div>
@@ -111,20 +132,43 @@
             </div>
             <div class="draw section pictionary">
                 <div class="container-width">
+                    <p>Question?</p>
+                    <div onload="init()">
+                        <canvas id="can" width="400" height="400" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
+                        <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
+                        <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
+                        <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
+                        <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
+                        <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
+                        <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
+                        <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
+                        <div style="position:absolute;top:20%;left:43%;">Eraser</div>
+                        <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+                        <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
+                        <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
+                        <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+                    </div>
                 </div>
             </div>
             <div class="confirm section pictionary">
                 <div class="container-width">
-                    <div class="user-image"></div>
-                    <svg></svg>
+                    <img id="user-image">
+                    <div>
+                        <img src="images/polygonpurple.svg">
+                        <img src="images/triangle.svg">
+                        <img src="images/cap.svg">
+                        <img src="images/baloon.svg">
+                    </div>
                     <p class="titleIntro">Thank you for sharing your creation with us. Your drawing will be viewed by people around the world. Isn't that amazing?</p>
                 </div>
                 <div class="download">
-                    <a href="">Download your image</a>
+                    <a href="" download="yourimage">Download your image</a>
                 </div>
             </div>
         </div>
-        
+        <footer>
+            <a href="">Project Documentation</a>
+        </footer>
         <script type="text/javascript" src="js/jquery.fullPage.js"></script>
         <script type="text/javascript" src="js/code.js"></script>
     </body>

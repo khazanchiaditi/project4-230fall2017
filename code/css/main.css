@@ -15,6 +15,7 @@ html{
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0px 35px;
 }
 
 h2,p,h3{
@@ -41,6 +42,18 @@ p{
     animation: intro .7s forwards, opacity 1s forwards;
 }
 
+.mapIntro {
+    animation: opacity 3s forwards;
+}
+
+.circleIntro {
+    animation: scaleup 1.5s forwards, opacity 3s forwards;
+}
+
+.svgIntro {
+    animation: scaleup 0.3s forwards, opacity 1s forwards;
+}
+
 @keyframes intro {
     0% {transform: translateY(75px);}
     100% {transform: translateY(0px);}
@@ -51,7 +64,12 @@ p{
     100% {opacity: 1;}
 }
 
-.info h2, .info p, .trivia h2, .trivia p, .pictionary h2, .pictionary p, .result h2, .result p{
+@keyframes scaleup {
+    0% {transform: scale(0.5);}
+    100% {transform: scale(1);}
+}
+
+.title h1, .title p, .info h2, .info p, .trivia h2, .trivia p, .pictionary h2, .pictionary p, .result h2, .result p{
     opacity: 0;
 }
 
@@ -62,6 +80,33 @@ p{
 .title{
     background-color: #5347dc!important;
     color: #fff;
+}
+
+.section.fp-auto-height-responsive.title .container-width{
+    position: absolute;
+    top: calc(50% - 80px);
+    z-index: 999999;
+    left: 0;
+    right: 0;
+}
+
+.section.fp-auto-height-responsive.title img{
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    width: 100%;
+}
+
+.section.fp-auto-height-responsive.title img:nth-of-type(1){
+        z-index: 9;
+}
+
+.section.fp-auto-height-responsive.title img:nth-of-type(2){
+        z-index: 4;
 }
 
 #heading h1{
@@ -78,19 +123,20 @@ h3{
 }
 
 #intro p {
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto;
     font-size: 1.2rem;
 }
 
 #scroll-begin {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
     height: 75px;
     text-align: center;
     opacity: 1;
     transition: .4s ease-out;
+    z-index: 9999;
 }
 
 #scroll-begin #scroll-line {
@@ -139,6 +185,7 @@ h3{
 
 	}
 }
+
 /****************************************************/
 /* info */
 /****************************************************/
@@ -151,14 +198,14 @@ h3{
 }
 
 .info p {
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto;
     color: #fdbd4c;
     font-size: 2rem;
 }
 
 form{
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
     padding-bottom: 30px;
     padding-top: 70px;
@@ -179,7 +226,8 @@ form{
 input[type=text] {
     background-color: transparent;
     border: 0;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     border-bottom: 2px solid #c6c6c6;
     color: #fdbd4c;
     font-size: 36px;
@@ -268,7 +316,7 @@ input[type=submit]{
 }
 
 .trivia p {
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto;
     color: #fdbd4c;
     font-size: 2rem;
@@ -354,30 +402,89 @@ h4{
     display: none;
 }
 
-.card, img{
+.card, .trivia img{
     z-index: 999999999;
+    display: none;
+    visibility: hidden;
 }
 
-img{
+.trivia img{
     max-width: 550px;
     border: 4px solid #fff;
     border-radius: 5px;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: all 0.3s ease-in-out;
-    transition-duration: 1000;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+    display: none;
+    visibility: hidden;
 }
 
 .seen{
     opacity: 1!important;
     display: block!important;
+    visibility: visible!important;
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .cardmove{
     transform: translateY(50px);
     opacity: 1;
+     display: block!important;
+    visibility: visible!important;
 }
+
+.trivia .svg-images{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.trivia .svg-images img{
+    max-width: 100%;
+    width: 30%;
+    height: 30%;
+    border: none;
+    border-radius: 0px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+    visibility: visible!important;
+    position: relative;
+}
+
+.trivia .svg-images img:nth-of-type(1){
+    top: 480px;
+    left: 370px;
+    z-index: 999999999999999;
+}
+
+.trivia .svg-images img:nth-of-type(2){
+    top: -180px;
+    left: 90px;
+}
+
+.trivia .svg-images img:nth-of-type(3){
+    top: -110px;
+    left: 20px;
+    z-index: 999999999999999;
+}
+
+.trivia .svg-images img:nth-of-type(4){
+    bottom: 560px;
+    left: 480px;
+}
+
 /****************************************************/
 /* pictionary */
 /****************************************************/
@@ -389,12 +496,14 @@ img{
     color: #fff;
 }
 
-.user-image{
+#user-image{
     background-color: white;
     max-width: 600px;
     width: 100%;
     height: 400px;
     margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
 }
 
 .download{
@@ -408,6 +517,47 @@ img{
     font-size: 1.3rem;
 }
 
+#fullpage > div.confirm.section.pictionary > div > div.container-width > div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    width: 100%;
+    height: 600px;
+}
+
+.pictionary div > div.container-width > div > img:nth-child(1), .pictionary div > div.container-width > div > img:nth-child(2), .pictionary div > div.container-width > div > img:nth-child(3), .pictionary div > div.container-width > div > img:nth-child(4){
+    width: 25%;
+    height: 25%;
+    position: relative;
+    opacity: 0;
+}
+
+.pictionary div > div.container-width > div > img:nth-child(1){
+    top: 410px;
+    left: 575px;
+}
+
+.pictionary div > div.container-width > div > img:nth-child(2){
+    top: 370px;
+    left: -193px;
+    transform: rotate(-30deg);
+}
+
+.pictionary div > div.container-width > div > img:nth-child(3){
+    top: 20px;
+    left: -284px;
+    transform: rotate(120deg);
+}
+
+.pictionary div > div.container-width > div > img:nth-child(4){
+    top: -110px;
+    left: 556px;
+    transform: rotate(-20deg);
+}
 /****************************************************/
 /* result */
 /****************************************************/
@@ -416,49 +566,64 @@ img{
 }
 
 /****************************************************/
+/* footer */
+/****************************************************/
+footer{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+footer a{
+    display: block;
+    color: black;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+}
+
+footer a:hover{
+    color: lightgrey;
+}
+/****************************************************/
 /* RESPONSIVE */
 /****************************************************/
 
-@media only screen and (max-width: 1400px) {
-
+@media only screen and (max-width: 992px) {
+    html{
+        font-size: 14px;
+    }
 }
 
-/*
---put in a  brief para about what we had in mind before we started the project, and what we ended up making and what we learnt in the process. Also mention that there are couple of functionalities that we would possibly like to implement in future (the php database, live image gallery etc)--
+@media only screen and (max-width: 768px) {
+    html{
+        font-size: 12px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(4) {
+        left: 456px;
+    }
+}
 
-RESPONSIBIILITES:
+@media only screen and (max-width: 576px) {
+    html{
+        font-size: 10px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(1){
+        left: 330px;
+    }
 
-Aahel:
-- project proposal
-- sketches
-- mockups and final design (color & mood)
-- final written content
+    .pictionary div > div.container-width > div > img:nth-child(2){
+        left: -142px;
+    }
 
-Aditi:
-- project proposal
-- writing the documentation page
-- Coding the interactive experience
+    .pictionary div > div.container-width > div > img:nth-child(3){
+        left: -224px;
+    }
 
-
-DESIGN INSPIRATION:
-
-CODE RESOURCES:
-
-Adding and removing class on scroll
-http://jsfiddle.net/ult_combo/ayGwn/4/
-
-Hiding the scroll bar while still making the page scrollable
-https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable
-
-JAVASCRIPT LIBRARIES USED:
-
-Fullpage.js
-https://alvarotrigo.com/fullPage/
-
-CSS GRAPHICS:
-SVG
-Canvas
-
-ABOVE & BEYOND:
---think of shit to put here lol. Our concept itself was pretty above and beyond. Plus we used js library other than jquery so that counts too.
-*/
+    .pictionary div > div.container-width > div > img:nth-child(4){
+        left: 346px;
+    }
+}
