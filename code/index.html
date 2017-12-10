@@ -7,7 +7,9 @@
         <meta name="description" content="">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/cbf7nrq.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body>
@@ -18,7 +20,7 @@
                     <div id="intro"><p>This interactive experience aims to educate people about other cultures. And to also make them realise how we are fundamentally similar even with our differences.</p></div>
                 </div>
                 <div id="scroll-begin">
-                    <small>Scroll to begin</small>
+                    <small>Begin your journey</small>
                     <div id="scroll-line"></div>
                 </div>
             </div>
@@ -33,68 +35,75 @@
                 <div class="container-width">
                     <div class="messages"></div>
                     <h3>What is your Name?</h3><br>
-                    <form method="post" action="info.php" role="form">
+                    <form method="post" action="#country" role="form">
                         <input id="user_name" type="text" name="name" required="required" data-error="Firstname is required">
                          <div class="label-text">Your Name</div>
                         <div class="help-block with-errors"></div>
-                        <input type="submit" class="button" value="Next">
+                        <a href="#country" class="next"><input type="submit" class="button" value="Next"><br>&darr;</a>
                     </form>
                 </div>
             </div>
-            <div class="question section info">
+            <div class="question section info" id="country">
                 <div class="container-width">
                     <div class="messages"></div>
                     <h3>Where are you from?</h3><br>
-                    <form method="post" action="info.php" role="form">
+                    <form method="post" action="#third" role="form">
                         <input id="user_name" type="text" name="name" required="required" data-error="Country is required">
                         <div class="label-text">Country</div>
                         <div class="help-block with-errors"></div>
-                        <input type="submit" class="button" value="Next">
+                       <a href="#third" class="next"><input type="submit" class="button" value="Next"><br>&darr;</a>
                     </form>
                 </div>
             </div>
-            <div class="question section info">
+            <div class="question section info" id="third">
                 <div class="container-width">
                     <div class="messages"></div>
                     <h3>third question?</h3><br>
-                    <form method="post" action="info.php" role="form">
+                    <form method="post" action="#trivia-section" role="form">
                         <input id="user_name" type="text" name="name" required="required" data-error="answer is required">
                         <div class="label-text">Answer</div>
                         <div class="help-block with-errors"></div>
-                        <input type="submit" class="button" value="Next">
+                        <a href="#trivia-section" class="next"><input type="submit" class="button" value="Next"><br>&darr;</a>
                     </form>
                 </div>
             </div>
 
-            <div class="brief section trivia">
+            <div class="brief section trivia" id="trivia-section">
                 <div class="container-width">
                     <h2>Weekly Trivia</h2><br>
                     <p>Brief description of this section</p>
                 </div>
             </div>
             <div class="options section trivia">
-                    <div class="options-content">
-                        <div id="left-container"></div>
-                        <div id="right-container">
-                            <div class="container-width">
-                                <ul id="topics">
-                                    <li><a>Celebration</a></li>
-                                    <li><a href="">Culture</a></li>
-                                    <li><a href="">Society</a></li>
-                                    <li><a href="">Pets</a></li>
-                                </ul> 
-                            </div>
+                <div class="options-content">
+                    <div id="left-container">
+                        <div class="card celebration">
+                            <h4>Chinese New Year</h4><br>
+                            <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
+                            <img src="images/celebration.jpg" alt="Image showing celebration">
+                        </div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                    <div id="right-container">
+                        <div class="container-width">
+                            <ul id="topics">
+                                <li><a>Celebration</a></li>
+                                <li><a>Culture</a></li>
+                                <li><a>Society</a></li>
+                                <li><a>Pets</a></li>
+                            </ul> 
                         </div>
                     </div>
-                
-                   <div class="options-content">
-                         <svg width="100%" height="100%">
-                            <circle cx="100%" cy="50%" r="60%" fill="white" />
-                    </svg>
+                </div>
+                <div class="options-content">
+                    <div id="circle"></div>
 			     </div>
+                <div class="skip"><a href="#pictionary-section">Skip this section</a></div>
 		  </div>
 
-            <div class="brief section pictionary">
+            <div class="brief section pictionary" id="pictionary-section">
                 <div class="container-width">  
                     <h2>Pictionary</h2><br>
                     <p>Brief description of this section</p>
@@ -106,13 +115,12 @@
             </div>
             <div class="confirm section pictionary">
                 <div class="container-width">
+                    <div class="user-image"></div>
+                    <svg></svg>
+                    <p class="titleIntro">Thank you for sharing your creation with us. Your drawing will be viewed by people around the world. Isn't that amazing?</p>
                 </div>
-            </div>
-
-            <div class="section result">
-                <div class="container-width">
-                    <h2>Image database</h2><br>
-                    <p>Brief description of this section</p>
+                <div class="download">
+                    <a href="">Download your image</a>
                 </div>
             </div>
         </div>

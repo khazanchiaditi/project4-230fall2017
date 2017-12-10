@@ -1,18 +1,22 @@
-$(document).ready(function(){
+var draw = SVG('circle').size('100%', '100%');
+var circ = draw.circle('100%', '100%').attr({ fill: '#fff' });
 
-	$('#right-container ul li a').mouseenter(function() {
-		$("circle").attr("class", "half-move");
+$('#right-container ul li a').mouseenter(function() {
+		$('#circle').addClass('half-move');
+        $('.celebration img').addClass('seen');
 	});
 
-	$('#right-container ul li a').mouseout(function() {
-		$("circle").attr("class", "");
+$('#right-container ul li a').mouseleave(function() {
+		$('#circle').removeClass('half-move');
+    $('.celebration img').removeClass('seen');
 	});
-    
-    $('#right-container ul li a').click(function() {
-        $("circle").attr("class", "full-move");
-    });
 
-})
+$('#right-container ul li a').on('click', function() {
+		$('#circle').addClass('full-move');
+        $('.celebration img').addClass('cardmove');
+        $('.celebration p').addClass('seen');
+        $('.celebration h4').addClass('seen');
+	});
 
 //vertical dots in the form section
 
@@ -22,13 +26,13 @@ $(document).ready(function() {
         css3: true,
         'easing': 'ease',
         scrollingSpeed: 700, 
-        anchors:['title', 'info1', 'info2', 'info3','info4', 'trivia1', 'trivia2', 'pictionary1', 'pictionary2', 'pictionary3', 'result'],
+        anchors:['title', 'info1', 'info2', 'info3','info4', 'trivia1', 'trivia2', 'pictionary1', 'pictionary2', 'pictionary3'],
         navigation: true,
         
         afterLoad: function(anchorLink, index){
             var loadedSection = $(this);
             
-            if(anchorLink == 'title' || anchorLink == 'trivia1' || anchorLink == 'trivia2' || anchorLink == 'pictionary1' || anchorLink == 'pictionary2' || anchorLink == 'pictionary3' || anchorLink == 'result'){
+            if(anchorLink == 'title' || anchorLink == 'trivia1' || anchorLink == 'trivia2' || anchorLink == 'pictionary1' || anchorLink == 'pictionary2' || anchorLink == 'pictionary3'){
                 $('#fp-nav').hide(200);
             } else {
                 $('#fp-nav').show(200);
@@ -45,10 +49,6 @@ $(document).ready(function() {
             //fire animations pictionary
             if(anchorLink == 'pictionary1'){
                 pictionaryAnimate();
-            }
-            //fire animations result
-            if(anchorLink == 'result'){
-                resultAnimate();
             }
         },
     });
@@ -68,9 +68,6 @@ var triviaDescription = $('.trivia p');
 
 var pictionaryTitle = $('.pictionary h2');
 var pictionaryDescription = $('.pictionary p');
-
-var resultTitle = $('.result h2');
-var resultDescription = $('.result p');
 
 //fire animations for landing section
 $(document).ready(function() {
@@ -96,6 +93,13 @@ var triviaAnimate = (function() {
     }, 100);
 });
 
+ $('#third a.next').click(function() {
+        triviaTitle.addClass('titleIntro');
+        setTimeout(function() { 
+        triviaDescription.addClass('titleIntro'); 
+        }, 100);
+});
+
 //fire animations for pictionary
 var pictionaryAnimate = (function() {
     pictionaryTitle.addClass('titleIntro');
@@ -104,10 +108,9 @@ var pictionaryAnimate = (function() {
     }, 100);
 });
 
-//fire animations for result
-var resultAnimate = (function() {
-    resultTitle.addClass('titleIntro');
+ $('.skip a').click(function() {
+       pictionaryTitle.addClass('titleIntro');
     setTimeout(function() { 
-        resultDescription.addClass('titleIntro'); 
+        pictionaryDescription.addClass('titleIntro'); 
     }, 100);
 });

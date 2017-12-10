@@ -8,7 +8,7 @@
 
 html{
     font-size: 16px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'futura', sans-serif;
 }
 
 .container-width{
@@ -169,8 +169,11 @@ form{
     color: #c6c6c6;
     cursor: text;
     font-size: 1.3rem;
+    text-align: left;
+    position: relative;
     transform: translateY(-34px);
     transition: all 0.3s;
+    left: 50px;
  } 
     
 input[type=text] {
@@ -205,6 +208,26 @@ input[type=text]:focus + .label-text{
 input[type=text]:valid + .label-text{
     font-size: 18px;
     transform:translateY(-74p);
+}
+
+.next{
+    font-size: 1rem;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 49%;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+input[type=submit]{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    padding-bottom: 10px;
 }
 
 /****************************************************/
@@ -283,12 +306,7 @@ input[type=text]:valid + .label-text{
     color: #28b08f;
 }
 
-svg {
-	overflow: hidden;
-	position: relative;
-}
-
-circle {
+#circle {
 	width: 100%;
 	height: 100%;
 	transition: all .5s ease-in-out;
@@ -299,18 +317,95 @@ circle {
     transform: translateX(100%);
 }
 
-circle.half-move {
-	transform: translateX(-20%) scale(1.2,1.2) translateY(-6%);
+#circle.half-move {
+	transform: translateX(20%);
 }
 
-circle.full-move {
-	transform: translateX(-70%) scale(1.2,1.2) translateY(-6%);
+#circle.full-move {
+	transform: translateX(-25%);
+}
+  
+
+.skip a{
+    color: grey;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    text-decoration: none;
+    z-index: 999999;
+}
+
+h4{
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    color: #000;
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+.card p{
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    color: #000;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: 0px;
+    display: none;
+}
+
+.card, img{
+    z-index: 999999999;
+}
+
+img{
+    max-width: 550px;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transition-duration: 1000;
+}
+
+.seen{
+    opacity: 1!important;
+    display: block!important;
+}
+
+.cardmove{
+    transform: translateY(50px);
+    opacity: 1;
 }
 /****************************************************/
 /* pictionary */
 /****************************************************/
 .pictionary{
     background-color: #eec33b!important;
+}
+
+.pictionary h2{
+    color: #fff;
+}
+
+.user-image{
+    background-color: white;
+    max-width: 600px;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.download{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.download a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
 }
 
 /****************************************************/
@@ -329,7 +424,41 @@ circle.full-move {
 }
 
 /*
+--put in a  brief para about what we had in mind before we started the project, and what we ended up making and what we learnt in the process. Also mention that there are couple of functionalities that we would possibly like to implement in future (the php database, live image gallery etc)--
+
+RESPONSIBIILITES:
+
+Aahel:
+- project proposal
+- sketches
+- mockups and final design (color & mood)
+- final written content
+
+Aditi:
+- project proposal
+- writing the documentation page
+- Coding the interactive experience
+
+
+DESIGN INSPIRATION:
+
+CODE RESOURCES:
+
+Adding and removing class on scroll
 http://jsfiddle.net/ult_combo/ayGwn/4/
+
+Hiding the scroll bar while still making the page scrollable
 https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable
 
+JAVASCRIPT LIBRARIES USED:
+
+Fullpage.js
+https://alvarotrigo.com/fullPage/
+
+CSS GRAPHICS:
+SVG
+Canvas
+
+ABOVE & BEYOND:
+--think of shit to put here lol. Our concept itself was pretty above and beyond. Plus we used js library other than jquery so that counts too.
 */
