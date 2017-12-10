@@ -64,7 +64,7 @@ Aahel will lead the design for the project and Aditi will lead the code. We will
 - **Jquery**
 - **SVG**
 
-- **Github Repository** - https://github.com/khazanchiaditi/project4-230fall2017
-- **Link to the final website** - https://people.rit.edu/ak4124/igme230/project4/
+##Github Repository** - https://github.com/khazanchiaditi/project4-230fall2017
+##Link to the final website** - https://people.rit.edu/ak4124/igme230/project4/
 
 
