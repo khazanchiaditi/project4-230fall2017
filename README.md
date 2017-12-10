@@ -27,12 +27,12 @@ Aahel will lead the design for the project and Aditi will lead the code. We will
   - Sketches
   - Mockups (design and mood)
   - Coding the documentation page
-  - Written Content
+  - Written Content for the interactive website
   
 - **Aditi**
   - Proposal/design document
   - Writing the documentation page
-  - Coding the interactive experience
+  - Coding the interactive website
 
 ## List of Resources
 
