@@ -1,14 +1,32 @@
+* {
+	padding: 0;
+	margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'futura', sans-serif;
+}
+
+#container-width{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 35px;
+}
+
 section{
     margin-bottom: 50px;
 }
 
-h2{
-     cursor: none;
-
+h1{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 90px;
+    color: #5347dc;
 }
 
-header h2{
-    text-align: center;
+h2{
     margin-bottom: 40px;
 }
 
@@ -24,17 +42,16 @@ img{
     padding: 0px 20px;
 }
 
-#container-width h2{
-    margin-bottom: 40px;
-}
-
 #team h3{
     text-align: center;
+    font-weight: 300;
 }
 
 h3 a{
     color:rgb(224, 82, 116);
 }
 
+p{
+    font-size: 20px;
+    color: #3a3a3a;
 }
-----
