@@ -24,6 +24,7 @@ h2,p,h3{
 
 p{
     font-size:2rem;
+    font-weight: 300;
 }
 
 #fp-nav{
@@ -341,7 +342,7 @@ input[type=text]:valid + .label-text{
 
 #right-container ul li a{
     text-decoration: none;
-    color: #000;
+    color: #333;
     font-weight: 800;
     transition: all 0.2s ease;
     position: relative;
@@ -386,7 +387,7 @@ input[type=text]:valid + .label-text{
 h4{
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    color: #000;
+    color: #333;
     font-size: 1.6rem;
     text-align: left;
 }
@@ -394,7 +395,7 @@ h4{
 .card p{
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    color: #000;
+    color: #333;
     font-size: 1.2rem;
     text-align: left;
     margin-left: 0px;
@@ -563,7 +564,7 @@ h4{
     font-size: 2.6rem;
     opacity: 1!Important;
     position: relative;
-    top: -220px;
+    top: -90px;
     left: 0;
     right: 0;
 }
@@ -603,54 +604,66 @@ h4{
     background-color: #6028ca!important;
 }
 
-#blue, #red, #white, #black, #orange, #clr{
-   position: relative;
+#blue, #red, #white, #black, #green, #clr{
+   position: absolute;
     height: 40px;
     cursor: pointer;
     width: 40px;
     border-radius: 10000px;
-    right: -1040px;
+    right: 50px;
 }
 
 #blue{
-    background-color: darkseagreen;
-    top: -100px;
+    background-color: #5347dc;
+    top: 10px;
 }
 
 #red{
-    background-color: deepskyblue;
-    top: -70px;
+    background-color: #e05274;
+    top: 90px;
 }
 
 #black{
-    background-color: black;
-     top: -10px;
+    background-color: #333;
+    top: 250px
 }
 
-#orange{
-    background-color: darkorange;
-     top: -40px;
+#green{
+    background-color: #28b08f;
+    top: 170px;
 }
 
 #white{
     background-color: transparent;
     border: 2px solid white;
-    top: 50px;
     height: 40px;
     width: 25px;
-    right: -1049px;
     border-radius: 2px;
+    top: 350px;
+    right: 57px;
 }
 
 #clr{
     background-color: mediumvioletred;
-     top: 80px;
-    right: -1040px;
+    top:430px;
     background: transparent;
     border: none;
     color: white;
     font-size: 1.8rem;
 }
+
+.canvas-container{
+    width: 90%;
+    display: block;
+    height: 500px;
+}
+
+#strokes{
+    position: relative;
+    top: -11px;
+    left: 181px;
+}
+
 
 /****************************************************/
 /* result */
@@ -708,6 +721,88 @@ footer a:hover{
     html{
         font-size: 14px;
     }
+    
+    .trivia .svg-images img:nth-of-type(1) {
+    top: 480px;
+    left: 250px;
+    }
+    
+    .trivia .svg-images img:nth-of-type(2) {
+    top: -180px;
+    left: 40px;
+    }
+    
+    .trivia .svg-images img:nth-of-type(3) {
+    top: 20px;
+    left: 20px;
+    }
+    
+    .trivia .svg-images img:nth-of-type(4) {
+    bottom: 680px;
+    left: 290px;
+    }
+    
+    #circle {
+    width: 105%;
+    }
+    
+    #blue, #red, #white, #black, #green, #clr{
+    top: 10px;
+    }
+
+    #blue{
+        right: 50px;
+    }
+
+    #red{
+    right: -30px;
+    }
+
+    #black{
+    right: -210px
+    }
+
+    #green{
+    right: -120px;
+    }
+
+    #white{
+    right: -310px;
+    }
+
+    #clr{
+    right: -370px;
+    }
+    
+    #strokes{
+    top: 500px;
+    left: -389px;
+    }   
+    
+    #btn {
+    top: 840px;
+    bottom: 0;
+    }
+    
+    .pictionary div #canvasimg {
+    width: 80%;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(1) {
+    left: 595px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(2) {
+    left: -203px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(3) {
+    left: -384px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(4) {
+    left: 566px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -717,6 +812,15 @@ footer a:hover{
     
     .pictionary div > div.container-width > div > img:nth-child(4) {
         left: 456px;
+    }
+    
+    #btn {
+    width: 168px;
+    height: 50px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(1) {
+    left: 495px;
     }
 }
 
