@@ -844,4 +844,51 @@ footer a:hover{
     .pictionary div > div.container-width > div > img:nth-child(4){
         left: 346px;
     }
+    
+    #fullpage > div.draw.section.pictionary > div > div > p {
+    font-size: 1.4rem;
+    top: -87px;
+    }
+    
+    #blue {
+    right: -260px;
+    }
+    
+    #blue, #red, #white, #black, #green, #clr {
+    top: -1px;
+    }
+    
+    #red {
+    right: -161px;
+    }
+    
+    #green {
+    right: -120px;
+    }
+    
+    #black {
+    right: -210px;
+    }
+    
+    #white {
+        right: -310px;
+        height: 29px;
+        width: 20px;
+        top: 8px;
+    }
+    
+    #btn {
+    top: -570PX;
+    bottom: 0;
+    width: 128px;
+    height: 40px;
+    }
+    
+    #fullpage > div.confirm.section.pictionary > div > div.container-width > p {
+    padding-top: 520px;
+    }
+    
+    .pictionary div > div.container-width > div > img:nth-child(4) {
+    top: -80px;
+    }
 }
