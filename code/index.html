@@ -31,7 +31,6 @@
             <div class="brief section info">
                 <div class="container-width">
                     <h2>Tell us about yourself</h2><br>
-                    <p>Brief description of this section</p>
                 </div>
             </div>
             <div class="question section info">
@@ -42,7 +41,7 @@
                         <input class="user_name" type="text" name="name" required="required" data-error="Firstname is required">
                          <div class="label-text">Your Name</div>
                         <div class="help-block with-errors"></div>
-                        <a href="#country" class="next"><div>Next Question</div>&darr;</a>
+                        <a href="#trivia-section" class="next"><div>Next Section</div>&darr;</a>
                     </form>
                 </div>
             </div>
@@ -58,23 +57,11 @@
                     </form>
                 </div>
             </div>
-            <div class="question section info" id="third">
-                <div class="container-width">
-                    <div class="messages"></div>
-                    <h3>third question?</h3><br>
-                    <form method="post" action="#trivia-section" role="form">
-                        <input class="user_name" type="text" name="name" required="required" data-error="answer is required">
-                        <div class="label-text">Answer</div>
-                        <div class="help-block with-errors"></div>
-                        <a href="#trivia-section" class="next"><div>Next section</div>&darr;</a>
-                    </form>
-                </div>
-            </div>
 
             <div class="brief section trivia" id="trivia-section">
                 <div class="container-width">
                     <h2>Weekly Trivia</h2><br>
-                    <p>Brief description of this section</p>
+                    <p>Your dose of fun and interesting facts from all around the planet</p>
                 </div>
             </div>
             <div class="options section trivia">
@@ -89,22 +76,22 @@
                         <div class="card celebration">
                             <h4>Chinese New Year</h4><br>
                             <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
-                            <img src="images/celebration.jpg" alt="Image showing celebration">
+                            <img src="images/celebration.png" alt="Image showing celebration">
                         </div>
                         <div class="card culture">
-                            <h4>Culture</h4><br>
-                            <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
-                            <img src="images/celebration.jpg" alt="Image showing culture">
+                            <h4>Food bringing people together</h4><br>
+                            <p>Right behind Christmas and Thanksgiving, Super Bowl Sunday ranks as the third largest occasion for Americans to consume food, according to the National Football League.</p>
+                            <img src="images/culture.png" alt="Image showing culture">
                         </div>
                         <div class="card society">
-                            <h4>Society</h4><br>
+                            <h4>Diversity in language</h4><br>
                             <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
-                            <img src="images/celebration.jpg" alt="Image showing society">
+                            <img src="images/society.png" alt="Image showing society">
                         </div>
                         <div class="card pets">
-                            <h4>Pets</h4><br>
-                            <p>During the Chinese New Year people often greet each other by shouting "auspicious phrases" though to rbing luck, like "gong x fa cai," which translates to "Congratulations and be prosperous."</p>
-                            <img src="images/celebration.jpg" alt="Image showing pets">
+                            <h4>Pets make the world a better place</h4><br>
+                            <p>68% of New Zealand households own a pet, higher than any other country on the planet.</p>
+                            <img src="images/pets.png" alt="Image showing pets">
                         </div>
                     </div>
                     <div id="right-container">
@@ -127,20 +114,22 @@
             <div class="brief section pictionary" id="pictionary-section">
                 <div class="container-width">  
                     <h2>Pictionary</h2><br>
-                    <p>Brief description of this section</p>
+                    <p>Images can tell a stories, what’s yours?</p>
                 </div>
             </div>
             <div class="draw section pictionary">
                 <div class="container-width">
-                    <p>Here is the question</p>
-                    <div>
+                    <p>Draw an image of your favorite classroom or learning place</p>
+                    <div class="canvas-container">
                         <canvas id="can" width="900" height="500"></canvas>
+                        <div id="strokes">
                         <div id="blue" onclick="color(this)"></div>
                         <div id="red" onclick="color(this)"></div>
-                        <div id="orange" onclick="color(this)"></div>
+                        <div id="green" onclick="color(this)"></div>
                         <div id="black" onclick="color(this)"></div>
                         <div id="white" onclick="color(this)"></div>
                         <input type="button" value="X" id="clr" onclick="erase()">
+                        </div>
                         <input type="button" value="Submit" id="btn" onclick="save()">
                     </div>
                 </div>

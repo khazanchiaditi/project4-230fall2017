@@ -166,7 +166,7 @@ $(document).ready(function() {
         css3: true,
         'easing': 'ease',
         scrollingSpeed: 700, 
-        anchors:['title', 'info1', 'info2', 'info3','info4', 'trivia1', 'trivia2', 'pictionary1', 'pictionary2', 'pictionary3'],
+        anchors:['title', 'info1', 'info2', 'info3', 'trivia1', 'trivia2', 'pictionary1', 'pictionary2', 'pictionary3'],
         navigation: true,
         
         afterLoad: function(anchorLink, index){
@@ -263,13 +263,6 @@ var triviaAnimate = (function() {
     setTimeout(function() { 
         triviaDescription.addClass('titleIntro'); 
     }, 100);
-});
-
- $('#third a.next').click(function() {
-        triviaTitle.addClass('titleIntro');
-        setTimeout(function() { 
-        triviaDescription.addClass('titleIntro'); 
-        }, 100);
 });
 
 //fire animations for pictionary
@@ -375,6 +368,8 @@ function color(obj) {
 
 };
 
+
+//draw
 function drawCanvas() {
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
@@ -385,6 +380,8 @@ function drawCanvas() {
     ctx.closePath();
 };
 
+
+//eraser
 function erase() {
     var m = confirm("Want to clear");
     if (m) {
@@ -393,6 +390,8 @@ function erase() {
     }
 };
 
+
+//save
 function save() {
     document.getElementById("canvasimg").style.border = "2px solid";
     var dataURL = canvas.toDataURL();
@@ -431,6 +430,7 @@ function findxy(res, e) {
     }
 };
 
+//download image
 function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
@@ -440,3 +440,33 @@ document.getElementById('download').addEventListener('click', function() {
     downloadCanvas(this, 'can', 'yourimage.png');
 }, false);
 
+//scroll to last section when submit button is clicked, also show svg images after scroll
+$('#btn').click(function() {
+    $('html,body').animate({
+        scrollTop: $(".confirm").offset().top},
+        700);
+    setTimeout(function() { 
+        shapeAnimate();
+    }, 800);
+
+});
+
+//responsive canvas
+$(document).ready( function(){
+  		
+  		//Get the canvas & context
+  		var c = $('#can');
+  		var ct = c.get(0).getContext('2d');
+  		var container = $(c).parent();
+  		
+  		//Run function when browser  resize
+	  	$(window).resize( respondCanvas );
+	  	
+	  	function respondCanvas(){
+  			c.attr('width', $(container).width() ); //max width
+  			c.attr('height', $(container).height() ); //max height
+		}
+		
+		//Initial call
+		respondCanvas();
+  	});
