@@ -1,0 +1,40 @@
+section{
+    margin-bottom: 50px;
+}
+
+h2{
+     cursor: none;
+
+}
+
+header h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#team{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+img{
+    width: 200px;
+    height: auto;
+    padding: 0px 20px;
+}
+
+#container-width h2{
+    margin-bottom: 40px;
+}
+
+#team h3{
+    text-align: center;
+}
+
+h3 a{
+    color:rgb(224, 82, 116);
+}
+
+}
+----
