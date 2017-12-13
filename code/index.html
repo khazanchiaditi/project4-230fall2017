@@ -12,15 +12,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body onload="init()">
         <div id="fullpage">
             <div class="section fp-auto-height-responsive title">
                 <div class="container-width">
                     <div id="heading"><h1>The World's Canvas</h1></div><br>
                     <div id="intro"><p>An interactive experience that aims to educate people about other cultures and to also make them realise how despite our differences we are fundamnetally the same.</p></div>
                 </div>
-                <img src="images/circles.svg" width="100" height="100">
-                <img src="images/map.svg" width="100" height="100">
+                <img src="images/circles.svg" width="100" height="100" alt="Background image of abstract shapes">
+                <img src="images/map.svg" width="100" height="100" alt="background image of world map made of circle">
                 
                 <div id="scroll-begin">
                     <small>Scroll to Begin your Journey</small>
@@ -39,10 +39,10 @@
                     <div class="messages"></div>
                     <h3>What is your Name?</h3><br>
                     <form method="post" action="#country" role="form">
-                        <input id="user_name" type="text" name="name" required="required" data-error="Firstname is required">
+                        <input class="user_name" type="text" name="name" required="required" data-error="Firstname is required">
                          <div class="label-text">Your Name</div>
                         <div class="help-block with-errors"></div>
-                        <a href="#country" class="next"><input type="submit" class="button" value="Next"><br>&darr;</a>
+                        <a href="#country" class="next"><div>Next Question</div>&darr;</a>
                     </form>
                 </div>
             </div>
@@ -51,10 +51,10 @@
                     <div class="messages"></div>
                     <h3>Where are you from?</h3><br>
                     <form method="post" action="#third" role="form">
-                        <input id="user_name" type="text" name="name" required="required" data-error="Country is required">
+                        <input class="user_name" type="text" name="name" required="required" data-error="Country is required">
                         <div class="label-text">Country</div>
                         <div class="help-block with-errors"></div>
-                       <a href="#third" class="next"><input type="submit" class="button" value="Next"><br>&darr;</a>
+                       <a href="#third" class="next"><div>Next Question</div>&darr;</a>
                     </form>
                 </div>
             </div>
@@ -63,10 +63,10 @@
                     <div class="messages"></div>
                     <h3>third question?</h3><br>
                     <form method="post" action="#trivia-section" role="form">
-                        <input id="user_name" type="text" name="name" required="required" data-error="answer is required">
+                        <input class="user_name" type="text" name="name" required="required" data-error="answer is required">
                         <div class="label-text">Answer</div>
                         <div class="help-block with-errors"></div>
-                        <a href="#trivia-section" class="next"><input type="submit" class="button" value="Next"><br>&darr;</a>
+                        <a href="#trivia-section" class="next"><div>Next section</div>&darr;</a>
                     </form>
                 </div>
             </div>
@@ -81,10 +81,10 @@
                 <div class="options-content">
                     <div id="left-container">
                         <div class="svg-images">
-                            <img src="images/polygon.svg">
-                            <img src="images/triangle.svg">
-                            <img src="images/cap.svg">
-                            <img src="images/baloon.svg">
+                            <img src="images/polygon.svg" alt="abstract shape">
+                            <img src="images/triangle.svg" alt="abstract shape">
+                            <img src="images/cap.svg" alt="abstract shape">
+                            <img src="images/baloon.svg" alt="abstract shape">
                         </div>
                         <div class="card celebration">
                             <h4>Chinese New Year</h4><br>
@@ -132,37 +132,32 @@
             </div>
             <div class="draw section pictionary">
                 <div class="container-width">
-                    <p>Question?</p>
-                    <div onload="init()">
-                        <canvas id="can" width="400" height="400" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
-                        <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
-                        <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
-                        <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
-                        <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
-                        <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
-                        <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
-                        <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
-                        <div style="position:absolute;top:20%;left:43%;">Eraser</div>
-                        <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
-                        <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
-                        <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
-                        <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+                    <p>Here is the question</p>
+                    <div>
+                        <canvas id="can" width="900" height="500"></canvas>
+                        <div id="blue" onclick="color(this)"></div>
+                        <div id="red" onclick="color(this)"></div>
+                        <div id="orange" onclick="color(this)"></div>
+                        <div id="black" onclick="color(this)"></div>
+                        <div id="white" onclick="color(this)"></div>
+                        <input type="button" value="X" id="clr" onclick="erase()">
+                        <input type="button" value="Submit" id="btn" onclick="save()">
                     </div>
                 </div>
             </div>
             <div class="confirm section pictionary">
                 <div class="container-width">
-                    <img id="user-image">
+                    <img src="#" id="canvasimg" alt="User made image">
                     <div>
-                        <img src="images/polygonpurple.svg">
-                        <img src="images/triangle.svg">
-                        <img src="images/cap.svg">
-                        <img src="images/baloon.svg">
+                        <img src="images/polygonpurple.svg" alt="abstract shape">
+                        <img src="images/triangle.svg" alt="abstract shape">
+                        <img src="images/cap.svg" alt="abstract shape">
+                        <img src="images/baloon.svg" alt="abstract shape">
                     </div>
                     <p class="titleIntro">Thank you for sharing your creation with us. Your drawing will be viewed by people around the world. Isn't that amazing?</p>
                 </div>
-                <div class="download">
-                    <a href="" download="yourimage">Download your image</a>
+                <div class="download-button">
+                    <a id="download">Download your image</a>
                 </div>
             </div>
         </div>
